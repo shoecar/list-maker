@@ -5,7 +5,8 @@ class User < ActiveRecord::Base
 
   attr_reader :password
 
-  has_many :boards
+  has_many :listings
+  has_many :lists, through: :listings
 
   def self.find_by_creds(username, password)
     user = User.find_by_username(username)
