@@ -28,7 +28,7 @@ var ListForm = React.createClass({
 
   render: function () {
     return(
-      <form className="form-inline" onSubmit={this.handleSubmit}>
+      <form className="form" onSubmit={this.handleSubmit}>
         <div className="form-group">
           <input type="text" className="form-control"
                  placeholder="Name" name="name"
@@ -36,8 +36,8 @@ var ListForm = React.createClass({
           </input>
         </div>
         <div className="form-group">
-          <input type="submit" className="btn btn-primary"
-                 disabled={!this.valid()}>
+          <input type="submit" className="btn btn-primary btn-block"
+                 disabled={!this.valid()} value="Create List">
           </input>
         </div>
       </form>

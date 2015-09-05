@@ -1,5 +1,12 @@
 .list-items {
   list-style-type: none;
   .list-item {
+    height: 60px;
+    width: 300px;
+    margin: 0 auto;
+
+    h3 { display: inline; }
+
+    button { float: right; }
   }
 }

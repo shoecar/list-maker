@@ -1,13 +1,22 @@
 var List = React.createClass({
+  handleDelete: function (e) {
+    $.ajax({
+      method: 'DELETE',
+      url: '/api/lists/' + this.props.list.id,
+      dataType: 'JSON',
+      success: function () {
+        this.props.handleDeleteList(this.props.list);
+      }.bind(this)
+    });
+  },
+
   render: function () {
     return(
-      <li className="col-sm-10 col-sm-offset-1 col-xs-12 list-item">
-        <div className="col-xs-4">
-          {this.props.list.name}
-        </div>
-        <div className="col-xs-4">
-          <button className="btn btn-danger">Delete</button>
-        </div>
+      <li className="list-item">
+        <h3>{this.props.list.name}</h3>
+        <button className="btn btn-danger" onClick={this.handleDelete}>
+          Delete
+        </button>
       </li>
     );
   }
