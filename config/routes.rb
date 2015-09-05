@@ -7,5 +7,6 @@ Rails.application.routes.draw do
 
   namespace :api do
     resources :lists, except: [:new, :edit, :update]
+    resources :listings, only: [:create, :destroy]
   end
 end

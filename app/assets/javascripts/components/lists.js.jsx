@@ -8,11 +8,11 @@ var Lists = React.createClass({
   },
 
   addList: function (list) {
-    // $.ajax({
-    //   url: '/api/listings',
-    //   type: 'POST',
-    //   data: { listing: { user_id: USER.id, list_id: list.id }}
-    // });
+    $.ajax({
+      url: '/api/listings',
+      type: 'POST',
+      data: { listing: { user_id: USER.id, list_id: list.id }}
+    });
     this.state.lists.push(list);
     this.setState({ lists: this.state.lists });
   },
