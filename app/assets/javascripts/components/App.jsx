@@ -1,6 +1,8 @@
 var React = require('react');
 var Reqwest = require('reqwest');
-var View = require('./list_view/View.jsx');
+var View = require('./lists_view/View.jsx');
+var Router = require('react-router');
+var RouteHandler = Router.RouteHandler;
 
 module.exports = React.createClass({
   getDefaultProps: function () {
@@ -24,7 +26,7 @@ module.exports = React.createClass({
   render: function () {
     return (
       <div id="content">
-        <View origin={this.props.origin} readFromAPI={this.readFromAPI} />
+        <RouteHandler origin={this.props.origin} readFromAPI={this.readFromAPI} {...this.props}/>
       </div>
     );
   }

@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-  protect_from_forgery with: :exception
+  # protect_from_forgery with: :exception
   helper_method :current_user
   before_action :allow_cross_origin_requests, if: proc { Rails.env.development? }
 

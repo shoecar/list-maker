@@ -26,7 +26,7 @@ module.exports = React.createClass({
 
         <ul className="list-items">
           {this.props.data.map(function (list) {
-            return <List key={list.id} name={list.name}
+            return <List key={list.id} id={list.id} name={list.name}
                           handleDeleteList={this.deleteList}/>
           }.bind(this))}
         </ul>

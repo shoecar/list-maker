@@ -1,7 +1,10 @@
 require('../stylesheets/application.scss');
-// require('bootstrap-webpack');
 
 var React = require('react');
-var App = require('./components/App.jsx');
+var Router = require('react-router');
+var routes = require('./components/routes.jsx');
 
-React.render(<App/>, document.body);
+Router.run(routes, Router.HistoryLocation, function(Handler, state) {
+  var params = state.params;
+  React.render(<Handler params={params}/>, document.body);
+});
