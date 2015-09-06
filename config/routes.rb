@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  match '*all', to: 'application#preflight', via: [:options]
+
   root to: "root#index"
 
   resource :root, only: :index
