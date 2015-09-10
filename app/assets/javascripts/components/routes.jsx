@@ -8,7 +8,7 @@ var Route = Router.Route;
 
 module.exports = (
   <Route name='app' path='/' handler={App}>
-    <DefaultRoute name='/lists' handler={ListsView} />
+    <DefaultRoute name='lists' handler={ListsView} />
     <Route name='listPage' path='/lists/:listId' handler={ListPage} />
   </Route>
 );

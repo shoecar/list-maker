@@ -1,5 +1,6 @@
 var React = require('react');
 var Router = require('react-router');
+var Link = Router.Link;
 
 module.exports = React.createClass({
   getInitialState: function () {
@@ -11,15 +12,16 @@ module.exports = React.createClass({
   },
 
   readListFromAPI: function () {
-    this.props.readFromAPI(this.props.origin + '/api/lists/', function (lists) {
-      this.setState({ data: JSON.parse(lists.response).list });
+    this.props.readFromAPI(this.props.origin + '/api/lists/' + this.props.params.listId, function (list) {
+      this.setState({ data: JSON.parse(list.response) });
     }.bind(this));
   },
 
   render: function () {
     return (
       <div className="list-page">
-        <h2>{this.props.name}</h2>
+        <Link to='lists'>Lists</Link>
+        <h2>{this.state.data.name}</h2>
       </div>
     );
   }
